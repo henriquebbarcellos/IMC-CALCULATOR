@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="imc">
+        <h2>IMC</h2>
+    </div>
+    <div class="result">
+        <div class="result-result">
+            
+        </div>
+    </div>
+    <div class="form">
+        <form>
+            <label for="peso" id="text">Peso</label>
+            <input type="number" id="peso" autocomplete="off" placeholder="Digite seu peso...">
+            <br>
+            <br>
+            <laber for="altura" id="text">Altura</laber>
+            <input type="number" id="altura" autocomplete="off" placeholder="Digite sua altura...">
+            
+        </form>
+    </div>
+    <div class="calc">
+        <button id="calcular">CALCULAR</button>
+    </div>
+    <div class="info">
+        <div class="info-info">
+            
+        </div>
+
+    </div>
+    <div class="run">
+        <img src="/1cb1b8e931e5f9d9bdc4abe479cde54b-corrida-de-silhueta-de-mulher-de-fitness-by-vexels.png">
+    </div>
+    <div class="footer">
+        <div class="text">
+            <p>CRIADO POR</p>
+            <p>HENRIQUE B. BARCELLOS</p>
+        </div>
+        <div class="media">
+            <a href="https://api.whatsapp.com/send?phone=5522997085774&text=Ol%C3%A1%20"><img src="/wpp.svg" alt="WhatsApp"></a>
+            <a href="https://www.instagram.com/henriquebbarcellos/"><img src="/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.facebook.com/henribbarcellos"><img src="/facebook.svg" alt="Facebook"></a>
+            <a href="mailto:henriquebbarcellos@gmail.com"><img src="/email.svg" alt="Email"></a>
+        </div>
+    </div>
+
+</body>
+<script>
+
+        
+        imcOne = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
+        var calc = document.getElementById("calcular");
+        var result = document.getElementsByClassName("result-result");
+        var info = document.getElementsByClassName("info-info");
+    
+    calc.addEventListener('click', function(){
+
+        var peso = document.getElementById("peso").value;
+        var altura = document.getElementById("altura").value;
+        
+        var x = (peso / (altura * altura )).toFixed(2);
+
+        
+
+            
+        if(x < 18.5){
+
+            result[0].innerHTML = "<p>" + x + "</p>";
+            info[0].innerHTML = "<p style='color: #ABABAA;'>Abaixo do Peso</p>";
+
+        }else if(x < 24.9){
+            result[0].innerHTML = "<p>" + x + "</p>";
+            info[0].innerHTML = "<p style='color: #27DB77;'>Saudável</p>";
+        }else if(x < 29.9){
+            result[0].innerHTML = "<p>" + x + "</p>";
+            info[0].innerHTML = "<p style='color: #F5C845;'>Peso em Excesso</p>";
+        }else if(x < 34.9){
+            result[0].innerHTML = "<p>" + x + "</p>";
+            info[0].innerHTML = "<p style='color: #FFAA2E;'>Obesidade Grau 1</p>";
+        }else if(x < 39.9){
+            result[0].innerHTML = "<p>" + x + "</p>";
+            info[0].innerHTML = "<p style='color: #F55D42;'>Obesidade Grau 2<br>(severa)</p>";
+
+        }else{
+            result[0].innerHTML = "<p>" + x + "</p>";
+            info[0].innerHTML = "<p style='color: #A8250D;'>Obesidade Grau 3<br>(mórbida)</p>";
+        }
+        
+
+
+
+    }, false);
+
+</script>
+</html>
